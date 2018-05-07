@@ -2,12 +2,18 @@
 let request = new XMLHttpRequest();
 let requestURL;
 
-console.log(1)
 
 
 document.querySelector('.pokeSubmit').onclick = function(){
     pokeGet(document.querySelector('.pokeInput').value);
     document.querySelector('.pokeInput').value = '';
+}
+
+document.querySelector('.pokeInput').onkeydown = function(e){
+    if(e.keyCode == 13){
+        pokeGet(document.querySelector('.pokeInput').value);
+        document.querySelector('.pokeInput').value = '';
+    }
 }
 
 
@@ -34,11 +40,12 @@ function pokeWait(){
 function pokeInit(){
     console.log(request.response)
 
+    document.querySelector('.pokeMain').innerHTML = '';
+
 
     let pokedex = document.createElement('div');
 
     pokedex.style.border = '1px solid blue';
-    alert(document.querySelector('.pokeMain'));
     document.querySelector('.pokeMain').appendChild(pokedex);
 
     let sprite = document.createElement('img');
