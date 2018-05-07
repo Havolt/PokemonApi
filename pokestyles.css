@@ -1,0 +1,13 @@
+.pokeInput{
+    width: 25%;
+    min-width: 240px;
+}
+
+.pokeSubmit{
+    background: #FF1C1C;
+    color: white;
+    border-left: 1px solid rgb(240, 68, 68);
+    border-top: 1px solid rgb(240, 68, 68);
+    border-right: 1px solid rgb(189, 4, 4);
+    border-bottom: 1px solid rgb(189, 4, 4);
+}
