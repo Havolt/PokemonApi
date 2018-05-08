@@ -44,11 +44,17 @@ function pokeInit(){
 
 
     let pokedex = document.createElement('div');
+    pokedex.classList.add('pokedex');
 
-    pokedex.style.border = '1px solid blue';
+    pokedex.style.borderColor = 'blue';
     document.querySelector('.pokeMain').appendChild(pokedex);
 
     let sprite = document.createElement('img');
     sprite.src = request.response.sprites.front_default;
     pokedex.appendChild(sprite);
+
+    let pokeName = document.createElement('div');
+    pokeName.innerHTML = request.response.name.toUpperCase();
+    pokeName.classList.add('pokeName');
+    pokedex.appendChild(pokeName);
 }

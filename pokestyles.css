@@ -3,6 +3,20 @@
     min-width: 240px;
 }
 
+html, body{
+    font-family: arial;
+}
+
+.pokedex{
+    width: 200px;
+    border: 1px solid;
+    text-align: center;
+}
+
+.pokeName{
+    font-weight: bold;
+}
+
 .pokeSubmit{
     background: #FF1C1C;
     color: white;
