@@ -8,9 +8,11 @@ html, body{
 }
 
 .pokedex{
+    margin-top: 20px;
     width: 200px;
-    border: 1px solid;
+    border: 2px solid;
     text-align: center;
+    border-radius: 5px;
 }
 
 .pokeName{
