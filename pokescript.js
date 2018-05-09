@@ -92,7 +92,78 @@ function pokedexBorder(typeA, typeB){
         document.querySelector('.pokedex').style.borderColor = '#0C67C2';
     }
 
-
+    if(typeB == 'bug'){
+        document.querySelector('.pokedex').style.borderRightColor = '#8f9d10';
+        document.querySelector('.pokedex').style.borderBottomColor = '#8f9d10';
+    }
+    else if(typeB == 'dark'){
+        document.querySelector('.pokedex').style.borderRightColor = '#3E2D23';
+        document.querySelector('.pokedex').style.borderBottomColor = '#3E2D23';
+    }
+    else if(typeB == 'dragon'){
+        document.querySelector('.pokedex').style.borderRightColor = '#5B4DA0';
+        document.querySelector('.pokedex').style.borderBottomColor = '#5B4DA0';
+    }
+    else if(typeB == 'electric'){
+        document.querySelector('.pokedex').style.borderRightColor = '#E79305';
+        document.querySelector('.pokedex').style.borderBottomColor = '#E79305';
+    }
+    else if(typeB == 'fairy'){
+        document.querySelector('.pokedex').style.borderRightColor = '#E18FE2';
+        document.querySelector('.pokedex').style.borderBottomColor = '#E18FE2';
+    }
+    else if(typeB == 'fighting'){
+        document.querySelector('.pokedex').style.borderRightColor = '#6C2F1C';
+        document.querySelector('.pokedex').style.borderBottomColor = '#6C2F1C';
+    }
+    else if(typeB == 'fire'){
+        document.querySelector('.pokedex').style.borderRightColor = '#C82005';
+        document.querySelector('.pokedex').style.borderBottomColor = '#C82005';
+    }
+    else if(typeB == 'flying'){
+        document.querySelector('.pokedex').style.borderRightColor = '#5D75D4';
+        document.querySelector('.pokedex').style.borderBottomColor = '#5D75D4';
+    }
+    else if(typeB == 'ghost'){
+        document.querySelector('.pokedex').style.borderRightColor = '#47468F';
+        document.querySelector('.pokedex').style.borderBottomColor = '#47468F';
+    }
+    else if(typeB == 'grass'){
+        document.querySelector('.pokedex').style.borderRightColor = '#56734B';
+        document.querySelector('.pokedex').style.borderBottomColor = '#56734B';
+    }
+    else if(typeB == 'ground'){
+        document.querySelector('.pokedex').style.borderRightColor = '#D2B359';
+        document.querySelector('.pokedex').style.borderBottomColor = '#D2B359';
+    }
+    else if(typeB == 'ice'){
+        document.querySelector('.pokedex').style.borderRightColor = '#6FD5F5';
+        document.querySelector('.pokedex').style.borderBottomColor = '#6FD5F5';
+    }
+    else if(typeB == 'normal'){
+        document.querySelector('.pokedex').style.borderRightColor = '#AEA495';
+        document.querySelector('.pokedex').style.borderBottomColor = '#AEA495';
+    }
+    else if(typeB == 'poison'){
+        document.querySelector('.pokedex').style.borderRightColor = '#944796';
+        document.querySelector('.pokedex').style.borderBottomColor = '#944796';
+    }
+    else if(typeB == 'psychic'){
+        document.querySelector('.pokedex').style.borderRightColor = '#DB3166';
+        document.querySelector('.pokedex').style.borderBottomColor = '#DB3166';
+    }
+    else if(typeB == 'rock'){
+        document.querySelector('.pokedex').style.borderRightColor = '#A08744';
+        document.querySelector('.pokedex').style.borderBottomColor = '#A08744';
+    }
+    else if(typeB == 'steel'){
+        document.querySelector('.pokedex').style.borderRightColor = '#9796A6';
+        document.querySelector('.pokedex').style.borderBottomColor = '#9796A6';
+    }
+    else if(typeB == 'water'){
+        document.querySelector('.pokedex').style.borderRightColor = '#0C67C2';
+        document.querySelector('.pokedex').style.borderBottomColor = '#0C67C2';
+    }
 }
 
 
