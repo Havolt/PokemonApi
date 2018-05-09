@@ -1,5 +1,5 @@
 let request = new XMLHttpRequest();
-let requestURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
+let requestURL;
 
 let siteData = {apiLoading: false}
 
@@ -23,6 +23,8 @@ function creEl(obj){
 
 function getData(e){
     if(e.type == 'click' || e.keyCode == 13){
+        document.querySelector('.badCallDiv').classList.add('hidden');
+        requestURL = 'http://pokeapi.salestock.net/api/v2/pokemon/';
         let inputData = '';
         inputData = document.querySelector('.pokeInput').value;
         document.querySelector('.pokeInput').value = '';
@@ -42,6 +44,11 @@ function dataReady(){
     if(!request.response){
         setTimeout(dataReady, 50)
     }
+    else if(request.response.detail == 'Not found.'){
+        siteData.apiLoading = true;
+        document.querySelector('.loadDiv').classList.add('hidden');
+        document.querySelector('.badCallDiv').classList.remove('hidden');
+    }
     else{
         siteData.apiLoading = true;
         document.querySelector('.loadDiv').classList.add('hidden');
@@ -50,8 +57,14 @@ function dataReady(){
 }
 
 (function initApp(){
+    //creating input section
     creEl({type: 'input', apnd: '.app', className: 'pokeInput',  evnt: { type: 'keydown', func: getData}});
     creEl({type: 'button', apnd: '.app', className: 'pokeButton', inHL: 'Click me', evnt: { type: 'click', func: getData}})
+
+    //creating loading icon
     creEl({type: 'div', apnd: '.app', className: ['loadDiv', 'hidden']});
     creEl({type: 'img', apnd: '.loadDiv', className: 'loadIcon', src: 'imgs/loading.gif'});
+
+    //creating bad input warning
+    creEl({type: 'div', apnd: '.app', className: ['badCallDiv', 'hidden'], inHL: 'Nothing found.'})
 })()
