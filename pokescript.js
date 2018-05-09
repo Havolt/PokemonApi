@@ -84,7 +84,10 @@ function pokeInit(){
     pokedex.appendChild(sprite);
 
     let pokeName = document.createElement('div');
-    pokeName.innerHTML = request.response.name.toUpperCase();
+    pokeName.innerHTML = '#';
+    if(request.response.id < 10){ pokeName.innerHTML += '00';}
+    else if(request.response.id < 100){ pokeName.innerHTML += '0';}
+    pokeName.innerHTML += request.response.id + ' ' + request.response.name.toUpperCase();
     pokeName.classList.add('pokeName');
     pokedex.appendChild(pokeName);
 
@@ -124,13 +127,29 @@ function pokeInit(){
         pokeAbil.innerHTML = request.response.abilities[i].ability.name.slice(0,1).toUpperCase() + request.response.abilities[i].ability.name.slice(1);
         if(request.response.abilities[i].is_hidden){
             console.log('come on');
-            pokeAbil.style.color = '#919191'
+            pokeAbil.style.color = '#7f7f7f'
             pokeAbil.innerHTML += ' (Hidden Ability)'
         }
         pokeAbility.appendChild(pokeAbil);
     }
     pokedex.appendChild(pokeAbility);
 
+    let pokeSize = document.createElement('div');
+
+    let pokeHeight = document.createElement('div');
+    pokeHeight.innerHTML = 'Height: '
+    if((request.response.height / 10) < 1 ){pokeHeight.innerHTML + '0.'}
+    pokeHeight.innerHTML += (request.response.height / 10) + ' m';
+    pokeSize.appendChild(pokeHeight);
+
+    let pokeWeight = document.createElement('div');
+    pokeWeight.innerHTML = 'Weight: '
+    if((request.response.weight / 10) < 1 ){pokeWeight.innerHTML + '0.'}
+    pokeWeight.innerHTML += (request.response.weight / 10) + ' kg';
+    pokeSize.appendChild(pokeWeight);
+
+
+    pokedex.appendChild(pokeSize);
 
 
 
