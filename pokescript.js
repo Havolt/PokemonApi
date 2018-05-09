@@ -87,4 +87,33 @@ function pokeInit(){
     pokeName.innerHTML = request.response.name.toUpperCase();
     pokeName.classList.add('pokeName');
     pokedex.appendChild(pokeName);
+
+    let pokeType = document.createElement('div');
+    pokeType.classList.add('pokeTypeCont');
+    pokedex.appendChild(pokeType);
+
+    let pokeTypeA = document.createElement('div');
+    pokeType.innerHTML = 'Type: '
+    pokeTypeA.classList.add('pokeType');
+    pokeTypeA.innerHTML = request.response.types[0].type.name.slice(0, 1).toUpperCase() +  request.response.types[0].type.name.slice(1);
+    for(let i = 0 ; i < pokeInfo.types.length; i++){
+        if(request.response.types[0].type.name == pokeInfo.types[i]){
+            console.log(pokeTypeA)
+            pokeTypeA.style.background = pokeInfo.typesColors[i];
+        }
+    }
+    pokeType.appendChild(pokeTypeA);
+
+    if(request.response.types[1]){
+        let pokeTypeB = document.createElement('div');
+        pokeTypeB.classList.add('pokeType');
+        pokeTypeB.innerHTML = request.response.types[1].type.name.slice(0, 1).toUpperCase() +  request.response.types[1].type.name.slice(1);
+        for(let i = 0 ; i < pokeInfo.types.length; i++){
+            if(request.response.types[1].type.name == pokeInfo.types[i]){
+                console.log('bye')
+                pokeTypeB.style.background = pokeInfo.typesColors[i];
+            }
+        }
+        pokeType.appendChild(pokeTypeB);
+    }
 }
