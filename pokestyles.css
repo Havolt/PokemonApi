@@ -41,3 +41,7 @@ html, body{
     padding: 2px 5px;
     border-radius: 2px;
 }
+
+.pokeAbility{
+    padding-bottom: 10px;
+}

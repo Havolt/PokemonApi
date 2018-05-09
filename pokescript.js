@@ -98,7 +98,6 @@ function pokeInit(){
     pokeTypeA.innerHTML = request.response.types[0].type.name.slice(0, 1).toUpperCase() +  request.response.types[0].type.name.slice(1);
     for(let i = 0 ; i < pokeInfo.types.length; i++){
         if(request.response.types[0].type.name == pokeInfo.types[i]){
-            console.log(pokeTypeA)
             pokeTypeA.style.background = pokeInfo.typesColors[i];
         }
     }
@@ -110,10 +109,29 @@ function pokeInit(){
         pokeTypeB.innerHTML = request.response.types[1].type.name.slice(0, 1).toUpperCase() +  request.response.types[1].type.name.slice(1);
         for(let i = 0 ; i < pokeInfo.types.length; i++){
             if(request.response.types[1].type.name == pokeInfo.types[i]){
-                console.log('bye')
                 pokeTypeB.style.background = pokeInfo.typesColors[i];
             }
         }
         pokeType.appendChild(pokeTypeB);
     }
+
+    let pokeAbility = document.createElement('div');
+    pokeAbility.innerHTML = 'Abilities: ';
+    pokeAbility.classList.add('pokeAbility');
+    
+    for(let i = 0; i < request.response.abilities.length; i++){
+        let pokeAbil = document.createElement('div');
+        pokeAbil.innerHTML = request.response.abilities[i].ability.name.slice(0,1).toUpperCase() + request.response.abilities[i].ability.name.slice(1);
+        if(request.response.abilities[i].is_hidden){
+            console.log('come on');
+            pokeAbil.style.color = '#919191'
+            pokeAbil.innerHTML += ' (Hidden Ability)'
+        }
+        pokeAbility.appendChild(pokeAbil);
+    }
+    pokedex.appendChild(pokeAbility);
+
+
+
+
 }
